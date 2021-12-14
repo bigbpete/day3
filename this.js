@@ -141,25 +141,40 @@
 
 // sayNumber.call(sayNumber);
 //--------------------------------------------
+/*Given the following employees object and the various employees that get added,
+ refactor the code to utilize the helper functions raiseSalary and promote. Add
+ methods to each object in the employees object named raiseSalary and promote.
+ These methods' values should reference the helper functions. The raiseSalary method
+ should accept the total raise amount the employee is receiving, and the promote method
+ should take in the employee's new title. The helper functions should not reference
+ objects directly by name but should utilize the this keyword to promote or raise the
+ salary of the various employees.The "raiseSalary" method should accept the total raise 
+ amount the employee is receiving as a parameter, and the "promote" method should take
+in the employee's new title.*/
+
+
 function raiseSalary() {
-    this.salary+= 20000//your code here
+    this.salary+= amount//your code here
   };
   
-  function promote() {
-    //your code here
-  };
+function promote() {
+    this.jobTitle = newTitle//your code here
+    };
   
   const employees = {};
   employees.bob = {
     salary: 60000,
-    jobTitle: 'sales rep'
+    jobTitle: 'sales rep',
+    promote: promote(),
   };
   employees.sarah = {
     salary: 80000,
-    jobTitle: 'sales supervisor'
+    jobTitle: 'sales supervisor',
   }
   employees.alex = {
     salary: 100000,
     jobTitle: 'sales director'
   }
 
+ 
+console.log(employees.bob.promote('sales'));
